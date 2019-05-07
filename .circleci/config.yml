@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:9.9.0
+      - image: 9.9.0-stretch
     working_directory: ~/demotestsite.net
     steps:
       - checkout
