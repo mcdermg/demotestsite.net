@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:9.9.0
+      - image: node:9.9.0-stretch
     working_directory: ~/demotestsite.net
     steps:
       - checkout
@@ -29,4 +29,4 @@ jobs:
             apt-get install -y awscli
       - run:
           name: Push to S3 bucket
-          command: cd public/ && aws s3 sync . s3://www.demotestsite.net
+          command: cd public/ && aws s3 sync . s3://www.demotestsite.net --region ca-central-1
