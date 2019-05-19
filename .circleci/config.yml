@@ -1,18 +1,13 @@
-## Customize the test machine
 machine:
   timezone:
-    America/Los_Angeles # Set the timezone
-## Customize dependencies
+    America/Argentina/Buenos_Aires
 dependencies:
   override:
     - npm install
-    # - npm install -g hexo
     - npm install -g hexo-cli
-## Customize test commands
 test:
- override:
-   - echo "testing"
-## Customize deployment commands
+  override:
+    - echo "testing"
 deployment:
   prod:
     branch: CircleCIIssue#2
