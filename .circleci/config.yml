@@ -32,7 +32,7 @@ jobs:
           command: python --version
       - run:
           name: Pip
-          command: python -m ensurepip --default-pip
+          command: apt-get install python-pip
       - run:
           name: Install AWS CLI
           command: pip install awscli
