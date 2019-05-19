@@ -3,14 +3,14 @@ jobs:
   build:
     docker:
       #-image: node:9.9.0-jessie
-      - image: node:9.9.0-stretch
-      #- image: node:9.9.0
+      #- image: node:9.9.0-stretch
+      - image: node:9.9.0
     working_directory: ~/demotestsite.net
     steps:
       - checkout
       - run:
           name: Install Hexo CLI
-          command: sudo npm install -g hexo-cli
+          command: npm install -g hexo-cli
       - restore_cache:
           keys:
             - npm-deps-{{ checksum "package.json" }}
