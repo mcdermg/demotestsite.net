@@ -28,14 +28,14 @@ jobs:
 #            apt-get update
 #            apt-get install -y awscli
       - run:
-          name: Check python
-          command: python --version
+          name: Install Python3
+          command: apt install python3
       - run:
-          name: Pip
-          command: apt-get install python-pip
+          name: Pip3
+          command: apt install python3-pip
       - run:
           name: Install AWS CLI
-          command: pip install awscli
+          command: pip3 install awscli
       - run:
           name: Push to S3 bucket
           command: cd public/ && aws s3 sync . s3://www.demotestsite.net --region ca-central-1 --acl public-read
