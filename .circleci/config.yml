@@ -31,8 +31,11 @@ jobs:
           name: Check python
           command: python --version
       - run:
+          name: Install sudo
+          command: apt-get install -y sudo
+      - run:
           name: Install AWS CLI
-          command: pip install awscli
+          command: sudo pip install awscli
       - run:
           name: Push to S3 bucket
           command: cd public/ && aws s3 sync . s3://www.demotestsite.net --region ca-central-1 --acl public-read
