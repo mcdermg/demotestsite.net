@@ -1,33 +1,26 @@
-version: 2
-jobs:
-  build:
-    docker:
-      #- image: node:9.9.0-stretch
-      - image: node:9.9.0
-    working_directory: ~/demotestsite.net
-    steps:
-      - checkout
-      - run:
-          name: Install Hexo CLI
-          command: sudo npm install -g hexo-cli
-      - restore_cache:
-          keys:
-            - npm-deps-{{ checksum "package.json" }}
-      - run:
-          name: Install dependencies
-          command: npm install
-      - save_cache:
-          key: npm-deps-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-      - run:
-          name: Generate static website
-          command: hexo generate
-      - run:
-          name: Install AWS CLI
-          command: |
-            apt-get update
-            apt-get install -y awscli
-      - run:
-          name: Push to S3 bucket
-          command: cd public/ && aws s3 sync . s3://www.demotestsite.net --region ca-central-1 --acl public-read
+## Customize the test machine
+machine:
+
+  timezone:
+    America/Argentina/Buenos_Aires # Set the timezone
+
+## Customize dependencies
+dependencies:
+  override:
+    - npm install
+    # - npm install -g hexo
+    - npm install -g hexo-cli
+
+## Customize test commands
+test:
+ override:
+   - echo "testing"
+
+## Customize deployment commands
+deployment:
+  prod:
+    branch: master
+    commands:
+      - hexo clean
+      - hexo generate
+      - aws s3 sync public/ s3://www.demotestsite.net --region ca-central-1 --acl public-read
