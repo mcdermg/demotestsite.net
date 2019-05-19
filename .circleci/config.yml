@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:9.9.0-stretch
+      #- image: node:9.9.0-stretch
+      - image: circleci/python
     working_directory: ~/demotestsite.net
     steps:
       - checkout
