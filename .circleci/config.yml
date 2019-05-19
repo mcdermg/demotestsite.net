@@ -2,9 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      #-image: node:9.9.0-jessie
-      #- image: node:9.9.0-stretch
-      - image: node:9.9.0
+      - image: node
     working_directory: ~/demotestsite.net
     steps:
       - checkout
@@ -26,7 +24,7 @@ jobs:
           command: hexo generate
       - run:
           name: Install AWS CLI
-          command: apt-get install -y awscli
+          command: apt-get install awscli -y
       - run:
           name: Push to S3 bucket
           command: cd public/ && aws s3 sync . s3://www.demotestsite.net --region ca-central-1 --acl public-read
