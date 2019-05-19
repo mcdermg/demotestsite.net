@@ -22,6 +22,9 @@ jobs:
       - run:
           name: Generate static website
           command: hexo generate
+        - run:
+            name: Apt update
+            command: apt-get update
       - run:
           name: Install AWS CLI
           command: apt-get install awscli -y
