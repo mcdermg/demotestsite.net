@@ -8,6 +8,12 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Node
+          command: apt install nodejs
+      - run:
+          name: Install NPM
+          command: apt install npm
+      - run:
           name: Install Hexo CLI
           command: npm install -g hexo-cli
       - restore_cache:
