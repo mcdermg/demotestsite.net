@@ -6,6 +6,3 @@ db.json
 node_modules/
 public/
 .deploy*/
-
-#Added by GMcD 20190507
-#/themes
