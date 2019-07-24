@@ -35,7 +35,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: false
 relative_link: false
 future: true
 highlight:
@@ -77,6 +77,7 @@ pagination_dir: page
 theme: edinburgh
 #theme: magnetic
 #theme: diaspora
+#theme: zzoman2015
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -91,3 +92,20 @@ menu:
   Facebook: https://www.facebook.com/gary.m.dermott/
   Twitter: https://twitter.com/mcdermg/
   #Instagram: https://www.instagram.com/mcdermg/
+
+# Configuration for hexo-image-sizes
+image_sizes:
+  pattern: !!js/regexp /\.(gif|jpg|jpeg|png)$/i
+  profiles:
+    body:
+      width: 700 # height will adjust to preserve aspect ratio
+    thumbnail:
+      width: 100 # Image will be cropped to a square
+      height: 100
+    huge:
+      height: 1000
+      allowEnlargement: true
+  defaultProfile: body
+  link: true
+  linkProfile: huge
+  useAltForTitle: true
