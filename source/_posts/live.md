@@ -19,7 +19,7 @@ Had some issues with Node dependency for a plugin for Hexo, the blogging softwar
 ![Stalin](/../images/post1/stalin.jpg)
 2
 
-No plugin no problem right. Hate to take a page from "Uncle Joe's" methods but after getting nowhere fixing the issue I decided to remove the plugin and just pivot to another. So this means that I have a functioning site and pipeline to deply. I now have no excuse to put out content.
+No plugin no problem right. Hate to take a page from "Uncle Joe's" methods but after getting nowhere fixing the issue I decided to remove the plugin and just pivot to another. So this means that I have a functioning site and pipeline to deploy. I now have no excuse to put out content.
 
 So the blog is going to be about a personal project to get a home monitoring solution up and probably a bit about the DevOps world, as far as a newbie like me sees it.
 
