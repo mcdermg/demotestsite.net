@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: demotestsite
+title: Gary Mc Dermott
 subtitle: DevOps trial and error
 description: DevOps, Cloud, Serveless projects
 keywords: programming, devops, cloud, python, serverless, containers
@@ -93,19 +93,13 @@ menu:
   Twitter: https://twitter.com/mcdermg/
   #Instagram: https://www.instagram.com/mcdermg/
 
-# Configuration for hexo-image-sizes
-image_sizes:
-  pattern: !!js/regexp /\.(gif|jpg|jpeg|png)$/i
-  profiles:
-    body:
-      width: 700 # height will adjust to preserve aspect ratio
-    thumbnail:
-      width: 100 # Image will be cropped to a square
-      height: 100
-    huge:
-      height: 1000
-      allowEnlargement: true
-  defaultProfile: body
-  link: true
-  linkProfile: huge
-  useAltForTitle: true
+# New reponsive images plugin
+responsive_images:
+  pattern: '**/*.+(png|jpg|jpeg)'
+  sizes:
+    small:
+      width: 800
+    medium:
+      width: 1200
+    large:
+      width: 2000
