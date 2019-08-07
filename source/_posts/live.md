@@ -7,12 +7,12 @@ cover_image: images/fuck-it-well-do-it-live-bill-oreilly.jpg
 
 So I have been pretty lazy about getting this blog up and going. One of the problems when you work in IT is that after a day of work, coming home a part f the time I don't want to sit in front of a computer. Started a new DevOps job and trying to adsorb a lot of information has made me a bit unproductive on my own projects lately.
 
-![Easy Devops Right](/images/post1/easydevops.png)
+![Easy DevOps Right](/images/post1/easydevops.png)
 1
 
 Especially when the your day to day in DevOps can often be something like the above. Its just the nature of the job that there are a lot of moving parts and then the new job feels a bit like I cant see the wood for trees. So when something happens in my own projects its up me to sort it and I often get frustrated by looking at the same issue and seemingly going in circles.
 
-Had few issues gettiing the blog up and going. I was implementing an automated pipeline with it. Using Hexo, node based blogging software. Git for version control (VC) version control. CircleCI for automated deployment and finally Amazon Web Services (AWS). Hoping to add in some automated testing with Selenium at some point, its in the backlog, Ill get to it I swear.
+Had few issues getting the blog up and going. I was implementing an automated pipeline with it. Using Hexo, node based blogging software. Git for version control (VC) version control. CircleCI for automated deployment and finally Amazon Web Services (AWS). Hoping to add in some automated testing with Selenium at some point, its in the backlog, Ill get to it I swear.
 
 Had some issues with Node dependency for a plugin for Hexo, the blogging software I went with, and my builds have been messy. Process works and as a proof of concept or minimal viable product its a go but I was just going over this issue with the plugin and going nowhere. So I decided to go by the seat of my pants and remove the problems.
 

@@ -1,6 +1,9 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - garysite
     docker:
       - image: node
     working_directory: ~/demotestsite.net
