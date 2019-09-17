@@ -60,7 +60,6 @@ jobs:
   demo_test:
     docker:
       - image: selenium/standalone-chrome
-    working_directory: ~/tests
     steps:
       - checkout
       - run:
@@ -73,8 +72,7 @@ jobs:
           command: pip install selenium
       - run:
           name: run python tests
-          command: python test2.py
-          working_directory: ~/tests
+          command: cd tests && python test2.py
       - store_artifacts:
           path: /tests
           destination: test-screenshots

@@ -9,7 +9,7 @@ options.add_argument('--headless')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 browser = webdriver.Chrome(executable_path=chromedriver, chrome_options=options)
-browser.get('https://www.garymcdermott.net')
+browser.get('https://www.demotestsite.net')
 
 if(browser.title=="Gary McDermott"):
     browser.save_screenshot('/home/tests/picture-'+timestr+'.png')
