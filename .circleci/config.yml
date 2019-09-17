@@ -74,6 +74,7 @@ jobs:
       - run:
           name: run python tests
           command: python test2.py
+          working_directory: ~/tests
       - store_artifacts:
           path: /tests
           destination: test-screenshots
