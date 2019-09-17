@@ -72,7 +72,7 @@ jobs:
           command: pip install selenium
       - run:
           name: run python tests
-          command: cd tests && python test2.py
+          command: cd tests/ && python test2.py
       - store_artifacts:
           path: /tests
           destination: test-screenshots
