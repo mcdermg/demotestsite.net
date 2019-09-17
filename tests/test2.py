@@ -11,7 +11,7 @@ options.add_argument('--disable-dev-shm-usage')
 browser = webdriver.Chrome(executable_path=chromedriver, chrome_options=options)
 browser.get('https://www.demotestsite.net')
 
-if(browser.title=="Gary McDermott"):
+if(browser.title=="Gary Mc Dermott"):
     browser.save_screenshot('/home/tests/picture-'+timestr+'.png')
     print ("Success: Main blog page exists")
     print exit(0)
