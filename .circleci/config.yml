@@ -8,7 +8,8 @@ workflows:
           filters:
             branches:
               only:
-                - garysite
+                #- garysite
+                - seleniumTest
       - demo_test:
           requires:
             - build_demo
@@ -16,7 +17,8 @@ workflows:
           filters:
             branches:
               only:
-                - garysite
+                #- garysite
+                - seleniumTest
           requires:
             - demo_test
 
@@ -58,26 +60,23 @@ jobs:
   demo_test:
     docker:
       - image: selenium/standalone-chrome
-      working_directory: ~/testing/tests
-      steps:
-        - checkout
-          path: ~/testing
-        - run:
-            name: Install PIP
-            command: |
-              apt-get update
-              apt-get install python-pip -y
-        - run:
-            name: Pip Install selienium
-            command: pip install selenium
-        - run:
-            name: run python tests
-            command: python test2.py
-        - store_artifacts:
-          path: /testing/tests
+    working_directory: ~/tests
+    steps:
+      - checkout
+      - run:
+          name: Install PIP
+          command: |
+            apt-get update
+            apt-get install python-pip -y
+      - run:
+          name: Pip Install selienium
+          command: pip install selenium
+      - run:
+          name: run python tests
+          command: python test2.py
+      - store_artifacts:
+          path: /tests
           destination: test-screenshots
-        - store_test_results:
-          path: test-results
 
   build_live:
     docker:
