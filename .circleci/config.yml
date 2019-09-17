@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  datadog: airswap/datadog@0.0.4
 
 workflows:
   version: 2
@@ -11,16 +9,16 @@ workflows:
             branches:
               only:
                 - garysite
-#      - demo_test:
-#          requires:
-#            - build_demo
+      - demo_test:
+          requires:
+            - build_demo
       - build_live:
           filters:
             branches:
               only:
                 - garysite
-#          requires:
-#            - demo_test
+          requires:
+            - demo_test
 
 jobs:
   build_demo:
@@ -57,7 +55,29 @@ jobs:
           name: Push to S3 bucket
           command: cd public/ && aws s3 sync . s3://www.demotestsite.net --region ca-central-1 --acl public-read
 
-#  demo_test:
+  demo_test:
+    docker:
+      - image: selenium/standalone-chrome
+      working_directory: ~/testing/tests
+      steps:
+        - checkout
+          path: ~/testing
+        - run:
+            name: Install PIP
+            command: |
+              apt-get update
+              apt-get install python-pip -y
+        - run:
+            name: Pip Install selienium
+            command: pip install selenium
+        - run:
+            name: run python tests
+            command: python test2.py
+        - store_artifacts:
+          path: /testing/tests
+          destination: test-screenshots
+        - store_test_results:
+          path: test-results
 
   build_live:
     docker:
