@@ -17,7 +17,7 @@ if(browser.title=="Gary Mc Dermott"):
     print exit(0)
 else:
     print ("Test failed: page title is incorrect")
-    browser.save_screenshot('/tests/picture-'+timestr+'.png')
+    browser.save_screenshot('picture-'+timestr+'.png')
     # python Datadog raise alert
     print exit(1)
 
