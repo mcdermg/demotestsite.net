@@ -75,7 +75,7 @@ jobs:
           name: run python tests
           command: cd tests/ && python test2.py
       - store_artifacts:
-          path: ~/testing/tests
+          path: ~/testing/tests/
           destination: test-screenshots
 
   build_live:
