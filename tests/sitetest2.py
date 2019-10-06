@@ -23,7 +23,7 @@ try:
     if(len(x)>0):
         print ("Success: found navbar")
         #browser.save_screenshot('./screenshots/test2-pass-'+timestr+'.png')
-        #print exit(0)
+        print exit(0)
 except NoSuchElementException:
     print("No element found. Breaking...")
     browser.save_screenshot('./screenshots/test2-NoSuchElementException-'+timestr+'.png')
@@ -32,6 +32,6 @@ else:
     if(len(x)==0):
         print ("Test failed: no navbar")
         browser.save_screenshot('./screenshots/test2-fail-'+timestr+'.png')
-        #print exit(1)
+        print exit(1)
 
 browser.quit()

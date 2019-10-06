@@ -15,12 +15,12 @@ browser.get('https://www.demotestsite.net')
 
 if(browser.title=="Gary Mc Dermott"):
     browser.save_screenshot('./screenshots/test1-pass-'+timestr+'.png')
-    print ("Success: Main blog page exists")
-    #print exit(0)
+    print ("Test passed: Page title is correct")
+    print exit(0)
 else:
-    print ("Test failed: page title is incorrect")
+    print ("Test failed: Page title is incorrect")
     browser.save_screenshot('./screenshots/test1-fail-'+timestr+'.png')
     # python Datadog raise alert
-    #print exit(1)
+    print exit(1)
 
 browser.quit()
