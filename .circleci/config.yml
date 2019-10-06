@@ -72,10 +72,13 @@ jobs:
           name: Pip Install selienium
           command: pip install selenium
       - run:
-          name: run python tests
-          command: cd tests/ && python test2.py
+          name: run python test 1
+          command: cd tests/ && python sitetest1.py
+      - run:
+          name: run python test 2
+          command: cd tests/ && python sitetest2.py
       - store_artifacts:
-          path: ~/testing/tests/
+          path: ~/testing/tests/screenshots/
           destination: test-screenshots
 
   build_live:
