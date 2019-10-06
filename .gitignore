@@ -8,3 +8,5 @@ public/
 .deploy*/
 chromedriver/*
 tests/screenshots/*
+package.json
+package-lock.json
