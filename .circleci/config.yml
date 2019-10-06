@@ -114,10 +114,10 @@ jobs:
       # TODO probably nt needed, more to do with CDN caching see https://medium.com/@yagonobre/automatically-invalidate-cloudfront-cache-for-site-hosted-on-s3-3c7818099868
       #- run:
       #    name: Clean down bucket
-      #    command: aws s3 rm s3://garymcdermott.net --recursive --region ca-central-1
+      #    command: aws s3 rm s3://garymcdermott.net --recursive --region eu-west-1
       - run:
           name: Push to S3 bucket
-          command: cd public/ && aws s3 sync . s3://garymcdermott.net --region ca-central-1 --acl public-read
+          command: cd public/ && aws s3 sync . s3://garymcdermott.net --region eu-west-1 --acl public-read
 
 #description: |
 #  Raise a CircleCI event to Datadog upon a successful job
