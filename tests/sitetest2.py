@@ -21,16 +21,16 @@ try:
     x=browser.find_elements_by_xpath("//a[contains(text(),'naddaaaaaaa')]")
     #x=browser.find_elements_by_xpath("//a[contains(text(),'About')]")
     if(len(x)>0):
-        print ("Success: found navbar")
-        #browser.save_screenshot('./screenshots/test2-pass-'+timestr+'.png')
+        print ("Success: Found About in navbar")
+        browser.save_screenshot('./screenshots/test2-pass-'+timestr+'.png')
         print exit(0)
 except NoSuchElementException:
     print("No element found. Breaking...")
     browser.save_screenshot('./screenshots/test2-NoSuchElementException-'+timestr+'.png')
-    #print exit(1)
+    print exit(1)
 else:
     if(len(x)==0):
-        print ("Test failed: no navbar")
+        print ("Test failed: Could not find About in navbar")
         browser.save_screenshot('./screenshots/test2-fail-'+timestr+'.png')
         print exit(1)
 
