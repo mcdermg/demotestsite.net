@@ -29,35 +29,22 @@ browser.get('https://www.demotestsite.net')
 try:
     #x=browser.find_elements_by_id("navbarCollapse")
     #x=browser.find_elements_by_id("naddaaaaaaa")
-    x=browser.find_elements_by_xpath("//a[contains(text(),'naddaaaaaaa')]")
-    #x=browser.find_elements_by_xpath("//a[contains(text(),'About')]")
+    #x=browser.find_elements_by_xpath("//a[contains(text(),'naddaaaaaaa')]")
+    x=browser.find_elements_by_xpath("//a[contains(text(),'About')]")
     if(len(x)>0):
-<<<<<<< HEAD
         browser.save_screenshot('./screenshots/test2-pass-'+timestr+'.png')
         logging.info("Success: Found About in navbar")
         logging.info(exit(0))
         #print ("Success: Found About in navbar")
         #print exit(0)
-=======
-        print ("Success: found navbar")
-        #browser.save_screenshot('./screenshots/test2-pass-'+timestr+'.png')
-        print exit(0)
->>>>>>> parent of 6c198fa... artifact issue troubleshooting
 except NoSuchElementException:
     browser.save_screenshot('./screenshots/test2-NoSuchElementException-'+timestr+'.png')
-<<<<<<< HEAD
     logging.critical("No such element found exception.")
     logging.critical(exit(1))
     #print("No element found. Breaking...")
     #print exit(1)
 else:
     if(len(x)==0):
-=======
-    #print exit(1)
-else:
-    if(len(x)==0):
-        print ("Test failed: no navbar")
->>>>>>> parent of 6c198fa... artifact issue troubleshooting
         browser.save_screenshot('./screenshots/test2-fail-'+timestr+'.png')
         logging.error("Test failed: Could not find About in navbar")
         logging.error(exit(1))
