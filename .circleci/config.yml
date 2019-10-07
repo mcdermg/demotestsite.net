@@ -72,8 +72,8 @@ jobs:
           name: Pip Install selienium
           command: pip install selenium
       - run:
-      name: Create artifact directory for test results
-      command: mkdir ~/testing/tests/screenshots
+          name: Create artifact directory for test results
+          command: mkdir ~/testing/tests/screenshots
       - run:
           name: run python test 1
           command: cd tests/ && python sitetest1.py

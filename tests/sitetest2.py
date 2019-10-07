@@ -29,8 +29,8 @@ browser.get('https://www.demotestsite.net')
 try:
     #x=browser.find_elements_by_id("navbarCollapse")
     #x=browser.find_elements_by_id("naddaaaaaaa")
-    x=browser.find_elements_by_xpath("//a[contains(text(),'naddaaaaaaa')]")
-    #x=browser.find_elements_by_xpath("//a[contains(text(),'About')]")
+    #x=browser.find_elements_by_xpath("//a[contains(text(),'naddaaaaaaa')]")
+    x=browser.find_elements_by_xpath("//a[contains(text(),'About')]")
     if(len(x)>0):
         browser.save_screenshot('./screenshots/test2-pass-'+timestr+'.png')
         logging.info("Success: Found About in navbar")
