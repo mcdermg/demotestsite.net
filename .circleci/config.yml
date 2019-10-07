@@ -81,7 +81,7 @@ jobs:
           name: run python test 2
           command: cd tests/ && python sitetest2.py
       - store_artifacts:
-          path: ~/testing/tests/screenshots
+          path: ~/testing/tests/screenshots/
           destination: test-screenshots
 
   build_live:
