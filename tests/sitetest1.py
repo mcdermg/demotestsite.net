@@ -20,8 +20,10 @@ options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 browser = webdriver.Chrome(executable_path=chromedriver, chrome_options=options)
 
-# url to be retrieved
-browser.get('https://www.demotestsite.net')
+# url to be retrieved.
+# Checking S3 url not site url due to CF caching. Needs to be http NOT https.
+#browser.get('https://www.demotestsite.net')
+browser.get('http://www.demotestsite.net.s3-website.ca-central-1.amazonaws.com')
 
 # Test
 if(browser.title=="Gary Mc Dermott"):
