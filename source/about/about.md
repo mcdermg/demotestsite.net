@@ -18,7 +18,7 @@ In those years I had not heard of DevOps but looking back I was going down that 
 
 Then I left for my travels but ended up working for a large cloud MSP in Canada and got different experience. A lot more process driven and it was a good experience to see how larger organizations functioned but it was funny as the same problems were there, too much manual toil and reacting instead of proactive feedback loops to the development side of the business. After about a ear I decided it was back to Argentina with me.
 
-So here I am and i have managed to land myself an actual Devops role for a multinational company on a pretty interesting project. Its fairly mature and smarter men than I have implemented most of the system and supporting structure already. This is good as it means I can learn new tools and not have to fuss to much about things breaking.
+So here I am and I have managed to land myself an actual DevOps role for a multinational company on a pretty interesting project. Its fairly mature and smarter men than I have implemented most of the system and supporting structure already. This is good as it means I can learn new tools and not have to fuss to much about things breaking.
 
 Ah yes I'm pretty obsessed with Raspberry Pi's. They have been one of the best teachers I have had and throughout the years I've learned so much (if not nearly everything) that has allowed my career to progress as it has. Its all well and good learning on the job but for me I learn the most when I am messing with my beloved Pi's and can be quit militant about them. Don't get me wrong I love Arduino and the host of other micro computers/boards out there but the Pi has a special lace for me.
 
