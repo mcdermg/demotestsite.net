@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  datadog: airswap/datadog@0.0.4
 
 workflows:
   version: 2
@@ -11,16 +9,18 @@ workflows:
             branches:
               only:
                 - garysite
-#      - demo_test:
-#          requires:
-#            - build_demo
+                #- seleniumTest
+      - demo_test:
+          requires:
+            - build_demo
       - build_live:
           filters:
             branches:
               only:
                 - garysite
-#          requires:
-#            - demo_test
+                #- seleniumTest
+          requires:
+            - demo_test
 
 jobs:
   build_demo:
@@ -56,8 +56,36 @@ jobs:
       - run:
           name: Push to S3 bucket
           command: cd public/ && aws s3 sync . s3://www.demotestsite.net --region ca-central-1 --acl public-read
+      - run:
+          name: Invalidate index.html
+          command: aws cloudfront create-invalidation --distribution-id E3KLSWT3BV2RA9 --paths /index.html
 
-#  demo_test:
+  demo_test:
+    docker:
+      - image: selenium/standalone-chrome
+    working_directory: ~/testing
+    steps:
+      - checkout
+      - run:
+          name: Install PIP
+          command: |
+            sudo apt-get update
+            sudo apt-get install python-pip -y
+      - run:
+          name: Pip Install selienium
+          command: pip install selenium
+      - run:
+          name: Create artifact directory for test results
+          command: mkdir ~/testing/tests/screenshots
+      - run:
+          name: run python test 1
+          command: cd tests/ && python sitetest1.py
+      - run:
+          name: run python test 2
+          command: cd tests/ && python sitetest2.py
+      - store_artifacts:
+          path: ~/testing/tests/screenshots
+          destination: test-screenshots
 
   build_live:
     docker:
@@ -92,10 +120,13 @@ jobs:
       # TODO probably nt needed, more to do with CDN caching see https://medium.com/@yagonobre/automatically-invalidate-cloudfront-cache-for-site-hosted-on-s3-3c7818099868
       #- run:
       #    name: Clean down bucket
-      #    command: aws s3 rm s3://garymcdermott.net --recursive --region ca-central-1
+      #    command: aws s3 rm s3://garymcdermott.net --recursive --region eu-west-1
       - run:
           name: Push to S3 bucket
-          command: cd public/ && aws s3 sync . s3://garymcdermott.net --region ca-central-1 --acl public-read
+          command: cd public/ && aws s3 sync . s3://garymcdermott.net --region eu-west-1 --acl public-read
+      - run:
+          name: Invalidate index.html
+          command: aws cloudfront create-invalidation --distribution-id E14CV7SBBHGPOR --paths /index.html
 
 #description: |
 #  Raise a CircleCI event to Datadog upon a successful job
