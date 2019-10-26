@@ -8,8 +8,8 @@ workflows:
           filters:
             branches:
               only:
-                #- garysite
-                - seleniumTest
+                - garysite
+                #- seleniumTest
       - demo_test:
           requires:
             - build_demo
@@ -17,8 +17,8 @@ workflows:
           filters:
             branches:
               only:
-                #- garysite
-                - seleniumTest
+                - garysite
+                #- seleniumTest
           requires:
             - demo_test
 
