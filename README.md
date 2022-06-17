@@ -7,9 +7,8 @@ My initial attempt at a blog site. I was more interested in the process of hosti
 - AWS
     - S3
     - Cloudfront
-
+    - Route 53
 - CircleCI
-
 - Hexo
 
 
